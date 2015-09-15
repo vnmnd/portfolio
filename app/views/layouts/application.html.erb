@@ -1,15 +1,53 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Portfolio</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>  
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<h1>Garrett Sand: Web Developer</h1>
-<p>Hi, my name is Garrett Sand, and I'm a web developer focused on Ruby on Rails.</p>
-<%= yield %>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-</body>
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="nav-bar right">
+         <ul class="button-group">
+           <li><a href="articles" class="button">My Blog</a></li>
+           <li><a href="#" class="button">About</a></li>
+           <li><a href="#" class="button">TBD</a></li>
+           <li><a href="#" class="button">TBD</a></li>
+          </ul>
+        </div>
+        <h1>Garrett Sand, Web Developer</h1>
+        <hr/>
+      </div>
+    </div>
+
+    <%= yield %>    
+   
+    <footer class="row">
+      <div class="large-12 columns">
+        <hr/>
+        <div class="row">
+          <div class="large-6 columns">
+            <p>© Copyright 2015 Garrett Sand</p>
+          </div>
+          <div class="large-6 columns">
+            <ul class="inline-list right">
+              <li><a href="#">Link 1</a></li>
+              <li><a href="#">Link 2</a></li>
+              <li><a href="#">Link 3</a></li>
+              <li><a href="#">Link 4</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
 </html>
