@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'pg'
 gem 'minitest-rails'
 gem 'foundation-rails'
 gem 'rails', '4.2.4'
@@ -18,7 +19,6 @@ group :development do
   gem 'byebug'
   gem 'web-console', '~> 2.0' 
   gem 'spring'
-  gem 'sqlite3'
 end
 
 group :test do 
@@ -28,8 +28,4 @@ end
 
 group :production do
   gem 'rails_12factor'
-  gem 'pg'  
 end
-
-
-
